@@ -115,25 +115,4 @@ Projeto_web/
 - **JavaScript**: Interatividade e lógica do quiz
 - **Google Fonts**: Tipografia (Poppins + Orbitron)
 
-## 📱 Responsividade
 
-O projeto é totalmente responsivo com breakpoints:
-- **Desktop**: > 768px
-- **Tablet**: 481px - 768px  
-- **Mobile**: ≤ 480px
-
-## 🔧 Dicas de Desenvolvimento
-
-1. **Sempre teste em múltiplos dispositivos**
-2. **Use caminhos relativos para assets**
-3. **Mantenha CSS organizado com comentários**
-4. **Otimize imagens para web**
-5. **Valide HTML/CSS antes de commitar**
-
-## 📞 Contato
-
-Para dúvidas ou sugestões, abra uma issue no repositório ou entre em contato com a equipe.
-
----
-
-**Desenvolvido com ❤️ pela equipe do Quiz de Super-Heróis**
