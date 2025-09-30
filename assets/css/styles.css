@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Configuração do body */
 body {
     font-family: 'Poppins', sans-serif;
     height: 100vh;
@@ -19,14 +17,12 @@ body {
     color: #333;
 }
 
-/* Container principal */
 .container {
     width: 100%;
     max-width: 600px;
     padding: 2rem;
 }
 
-/* Conteúdo de boas-vindas */
 .welcome-content {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -37,7 +33,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Título principal */
 .title {
     font-family: 'Orbitron', monospace;
     font-size: 2.8rem;
@@ -67,7 +62,6 @@ body {
     }
 }
 
-/* Descrição */
 .description {
     font-size: 1.1rem;
     font-weight: 300;
@@ -79,7 +73,6 @@ body {
     margin-right: auto;
 }
 
-/* Botão começar */
 .start-button {
     background: linear-gradient(135deg, #e11f1f 0%, #5c3d9a 100%);
     color: white;
@@ -96,20 +89,17 @@ body {
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
-/* Efeito hover do botão */
 .start-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
     background: linear-gradient(135deg, #021197c7 0%, #ad1616 100%);
 }
 
-/* Efeito active do botão */
 .start-button:active {
     transform: translateY(-1px);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
-/* Responsividade para tablets */
 @media (max-width: 768px) {
     .container {
         padding: 1.5rem;
@@ -133,7 +123,6 @@ body {
     }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 480px) {
     .container {
         padding: 1rem;

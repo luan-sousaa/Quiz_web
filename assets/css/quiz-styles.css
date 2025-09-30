@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Configuração do body para quiz - CORES AZUL E VERMELHO */
 body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
@@ -17,14 +15,12 @@ body {
     padding: 2rem 1rem;
 }
 
-/* Container principal */
 .container {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Conteúdo principal do quiz */
 .quiz-content {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -35,7 +31,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Título principal - CORES AZUL E VERMELHO */
 .title {
     font-family: 'Orbitron', monospace;
     font-size: 2.5rem;
@@ -66,17 +61,15 @@ body {
     }
 }
 
-/* Área de conteúdo do quiz - TAMANHO FIXO */
 .content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 2rem;
-    min-height: 500px; /* Altura mínima fixa */
+    min-height: 500px; 
     justify-content: space-between;
 }
 
-/* Progresso do quiz */
 .progress {
     text-align: center;
 }
@@ -92,7 +85,6 @@ body {
     box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
 }
 
-/* Container da pergunta - CORES AZUL E VERMELHO */
 .question-container {
     min-height: 100px;
     display: flex;
@@ -105,7 +97,6 @@ body {
     margin: 1rem 0;
 }
 
-/* Pergunta */
 .question {
     font-size: 1.3rem;
     font-weight: 600;
@@ -115,17 +106,14 @@ body {
     margin: 0;
 }
 
-/* Container das respostas - TAMANHO FIXO */
 .answers {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     max-width: 600px;
     margin: 0 auto;
-    min-height: 280px; /* Altura mínima para 4 respostas */
+    min-height: 280px;
 }
-
-/* Botões de resposta - TAMANHO FIXO */
 .answer {
     background: white;
     border: 2px solid #e2e8f0;
@@ -139,7 +127,7 @@ body {
     text-align: left;
     color: #2d3748;
     line-height: 1.5;
-    min-height: 60px; /* Altura mínima fixa para cada resposta */
+    min-height: 60px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -157,7 +145,6 @@ body {
     transform: translateY(0);
 }
 
-/* Tela de resultado */
 .finish {
     display: none;
     flex-direction: column;
@@ -203,7 +190,6 @@ body {
     height: auto;
 }
 
-/* Botões */
 .btn, button {
     border: none;
     padding: 1rem 2rem;
@@ -220,7 +206,6 @@ body {
     display: inline-block;
 }
 
-/* Botão primário - CORES AZUL E VERMELHO */
 .btn-primary, .finish button {
     background: linear-gradient(135deg, #1e40af 0%, #dc2626 100%);
     color: white;
@@ -233,7 +218,6 @@ body {
     background: linear-gradient(135deg, #1d4ed8 0%, #ef4444 100%);
 }
 
-/* Botão secundário - CORES AZUL E VERMELHO */
 .btn-secondary {
     background: linear-gradient(135deg, #dbeafe 0%, #fecaca 100%);
     color: #1e40af;
@@ -248,7 +232,6 @@ body {
     border-color: #dc2626;
 }
 
-/* Responsividade para tablets - MANTÉM TAMANHOS FIXOS */
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -264,7 +247,7 @@ body {
     }
     
     .content {
-        min-height: 450px; /* Altura ajustada para tablet */
+        min-height: 450px;
     }
     
     .question-container {
@@ -277,17 +260,16 @@ body {
     }
     
     .answers {
-        min-height: 260px; /* Altura ajustada para tablet */
+        min-height: 260px; 
     }
     
     .answer {
         padding: 0.9rem 1.2rem;
         font-size: 0.95rem;
-        min-height: 55px; /* Altura ajustada para tablet */
+        min-height: 55px; 
     }
 }
 
-/* Responsividade para celulares - MANTÉM TAMANHOS FIXOS */
 @media (max-width: 480px) {
     .quiz-content {
         padding: 1.5rem 1rem;
@@ -300,7 +282,7 @@ body {
     }
     
     .content {
-        min-height: 400px; /* Altura ajustada para mobile */
+        min-height: 400px; 
         gap: 1.5rem;
     }
     
@@ -314,14 +296,14 @@ body {
     }
     
     .answers {
-        min-height: 240px; /* Altura ajustada para mobile */
+        min-height: 240px; 
         gap: 0.8rem;
     }
     
     .answer {
         padding: 0.8rem 1rem;
         font-size: 0.9rem;
-        min-height: 50px; /* Altura ajustada para mobile */
+        min-height: 50px; 
     }
     
     .btn, button {
