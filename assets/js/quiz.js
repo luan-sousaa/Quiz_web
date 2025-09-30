@@ -13,6 +13,7 @@ const heroImage = document.querySelector(".hero-image");
 import quizDcHeroes from "./questoes.js";
 
 console.log(' Questões carregadas:', quizDcHeroes.length, 'perguntas');
+
 console.log(' Elementos encontrados:', {
   question: !!question,
   answers: !!answers,
@@ -47,10 +48,11 @@ btnRestart.onclick = () => {
 
 function nextQuestion(e) {
   const selectedOption = e.target.getAttribute("data-index");
+
   const currentQuestion = quizDcHeroes[currentIndex];
+
   const pontuacao = currentQuestion.opcoes[selectedOption].pontuacao;
-  
-  // Soma a pontuação da opção escolhida
+
   for (const heroi in pontuacao) {
     pontuacaoTotal[heroi] += pontuacao[heroi];
   }
@@ -63,17 +65,19 @@ function nextQuestion(e) {
   }
 }
 
+
 function determinarHeroiVencedor() {
+
   let heroiVencedor = "superman";
   let maiorPontuacao = pontuacaoTotal.superman;
-  
+
   for (const heroi in pontuacaoTotal) {
     if (pontuacaoTotal[heroi] > maiorPontuacao) {
       maiorPontuacao = pontuacaoTotal[heroi];
       heroiVencedor = heroi;
     }
   }
-  
+
   return {
     heroi: heroiVencedor,
     pontuacao: maiorPontuacao
@@ -83,8 +87,8 @@ function determinarHeroiVencedor() {
 function finish() {
   const resultado = determinarHeroiVencedor();
   let nomeHeroi = "";
-  
-  switch(resultado.heroi) {
+
+  switch (resultado.heroi) {
     case "superman":
       nomeHeroi = "Superman";
       break;
@@ -101,24 +105,22 @@ function finish() {
       nomeHeroi = "Aquaman";
       break;
   }
-  
+
   textFinish.innerHTML = `Você se parece mais com: <strong>${nomeHeroi}</strong>!`;
   heroResult.textContent = `Sua personalidade combina com os traços de ${nomeHeroi}.`;
-  heroImage.src = `../img/${resultado.heroi}.jpg`;
-  heroImage.alt = nomeHeroi;
-  
+  heroImage.src = `../assets/images/${nomeHeroi}.jpg`
   content.style.display = "none";
   contentFinish.style.display = "flex";
 }
 
 function loadQuestion() {
   console.log(`📋 Carregando questão ${currentIndex + 1}/${quizDcHeroes.length}`);
-  
+
   if (spnQtd) spnQtd.innerHTML = `${currentIndex + 1}/${quizDcHeroes.length}`;
   const item = quizDcHeroes[currentIndex];
   if (answers) answers.innerHTML = "";
   if (question) question.innerHTML = item.pergunta;
-  
+
   console.log(' Pergunta:', item.pergunta);
 
   item.opcoes.forEach((opcao, index) => {
