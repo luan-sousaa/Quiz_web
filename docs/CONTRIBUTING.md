@@ -5,11 +5,9 @@
 ### ✅ Antes de Começar
 - [ ] Leia o README.md principal
 - [ ] Entenda a estrutura de pastas
-- [ ] Veja os templates disponíveis
 - [ ] Defina qual página/funcionalidade vai desenvolver
 
 ### ✅ Desenvolvendo sua Página
-- [ ] Use os templates em `/templates/` como base
 - [ ] Siga os padrões de nomenclatura
 - [ ] Teste responsividade (desktop, tablet, mobile)
 - [ ] Valide HTML/CSS

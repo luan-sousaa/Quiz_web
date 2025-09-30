@@ -7,26 +7,25 @@ Sistema de quiz interativo com tema de super-heróis para descobrir qual persona
 ```
 Projeto_web/
 ├── README.md                 # Documentação principal
-├── inicio.html              # Página inicial (index)
+├── index.html               # Página principal
+├── questoes.js              # Banco de perguntas do quiz
 ├── assets/                  # Recursos estáticos
 │   ├── css/                 # Arquivos de estilo
-│   │   └── inicio-styles.css
+│   │   └── styles.css
 │   ├── js/                  # Arquivos JavaScript
-│   │   └── inicio-script.js
+│   │   └── script.js
 │   └── images/              # Imagens e recursos visuais
 │       └── dc.jpg
-├── pages/                   # Páginas do sistema
-│   └── (suas páginas aqui)
-├── templates/               # Templates reutilizáveis
-│   └── (templates base)
+├── pages/                   # Páginas adicionais do sistema
+│   └── (outras páginas)
 └── docs/                    # Documentação adicional
-    └── (guias e specs)
+    └── CONTRIBUTING.md
 ```
 
 ## 🚀 Como Executar
 
 1. Clone ou baixe o repositório
-2. Abra o arquivo `inicio.html` em um navegador
+2. Abra o arquivo `index.html` em um navegador
 3. Clique em "Começar" para iniciar o quiz
 
 ## 👥 Como Contribuir
@@ -115,25 +114,4 @@ Projeto_web/
 - **JavaScript**: Interatividade e lógica do quiz
 - **Google Fonts**: Tipografia (Poppins + Orbitron)
 
-## 📱 Responsividade
 
-O projeto é totalmente responsivo com breakpoints:
-- **Desktop**: > 768px
-- **Tablet**: 481px - 768px  
-- **Mobile**: ≤ 480px
-
-## 🔧 Dicas de Desenvolvimento
-
-1. **Sempre teste em múltiplos dispositivos**
-2. **Use caminhos relativos para assets**
-3. **Mantenha CSS organizado com comentários**
-4. **Otimize imagens para web**
-5. **Valide HTML/CSS antes de commitar**
-
-## 📞 Contato
-
-Para dúvidas ou sugestões, abra uma issue no repositório ou entre em contato com a equipe.
-
----
-
-**Desenvolvido com ❤️ pela equipe do Quiz de Super-Heróis**
