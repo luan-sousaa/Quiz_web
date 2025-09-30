@@ -1,117 +1,178 @@
-# 🦸‍♂️ Quiz de Super-Heróis
+# Quiz de Personalidade DC Comics
 
-Sistema de quiz interativo com tema de super-heróis para descobrir qual personagem você seria em um universo fictício.
+Sistema web de quiz interativo que determina qual herói da DC Comics corresponde à personalidade do usuário através de 10 questões específicas.
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 Projeto_web/
-├── README.md                 # Documentação principal
-├── index.html               # Página principal
-├── questoes.js              # Banco de perguntas do quiz
-├── assets/                  # Recursos estáticos
-│   ├── css/                 # Arquivos de estilo
-│   │   └── styles.css
-│   ├── js/                  # Arquivos JavaScript
-│   │   └── script.js
-│   └── images/              # Imagens e recursos visuais
-│       └── dc.jpg
-├── pages/                   # Páginas adicionais do sistema
-│   └── (outras páginas)
-└── docs/                    # Documentação adicional
-    └── CONTRIBUTING.md
+├── index.html                      # Página inicial de boas-vindas
+├── assets/
+│   ├── css/
+│   │   ├── styles.css              # Estilos da página inicial
+│   │   └── quiz-styles.css         # Estilos específicos do quiz
+│   ├── js/
+│   │   ├── script.js               # Lógica da página inicial
+│   │   ├── quiz.js                 # Lógica principal do quiz
+│   │   └── questoes.js             # Banco de dados das questões
+│   └── images/
+│       └── dc.jpg                  # Imagem de fundo da página inicial
+├── pages/
+│   └── quiz.html                   # Página principal do quiz
+└── docs/
+    └── CONTRIBUTING.md             # Guia para contribuições
 ```
 
-## 🚀 Como Executar
+## Como Usar
 
+### Execução Local
 1. Clone ou baixe o repositório
-2. Abra o arquivo `index.html` em um navegador
-3. Clique em "Começar" para iniciar o quiz
+2. Abra o arquivo `index.html` em qualquer navegador web moderno
+3. Clique no botão "Começar" para iniciar o quiz
+4. Responda as 10 questões apresentadas
+5. Visualize seu resultado personalizado
 
-## 👥 Como Contribuir
+### Servidor Local (Opcional)
+Para desenvolvimento ou testes avançados:
+```bash
+# Com Python 3
+python -m http.server 8000
 
-### 1. Criando uma Nova Página
+# Com Node.js (http-server)
+npx http-server
 
-1. Crie seu arquivo HTML na pasta `pages/`
-2. Crie os arquivos CSS em `assets/css/`
-3. Crie os arquivos JavaScript em `assets/js/`
-4. Siga os padrões de nomenclatura existentes
-
-### 2. Padrões de Nomenclatura
-
-- **HTML**: `nome-pagina.html`
-- **CSS**: `nome-pagina-styles.css`
-- **JS**: `nome-pagina-script.js`
-- **Imagens**: Use nomes descritivos em kebab-case
-
-### 3. Estrutura de uma Página
-
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título da Página - Quiz</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/sua-pagina-styles.css">
-</head>
-<body>
-    <!-- Seu conteúdo aqui -->
-    
-    <!-- JavaScript -->
-    <script src="../assets/js/sua-pagina-script.js"></script>
-</body>
-</html>
+# Com Live Server (VS Code)
+Instale a extensão Live Server e clique em "Go Live"
 ```
 
-## 🎨 Padrões de Design
+## Lógica do Sistema
 
-### Cores do Tema
-- **Primária**: Gradiente azul-roxo (#667eea → #764ba2)
-- **Secundária**: Vermelho-azul para elementos heroicos (#dc2626 → #1e40af)
-- **Fundo**: Imagens temáticas de super-heróis
-- **Texto**: #4a5568 (títulos), #718096 (descrições)
+### Funcionamento do Quiz
+1. **Inicialização**: Carrega 10 questões do arquivo `questoes.js`
+2. **Pontuação**: Cada resposta atribui pontos para 5 heróis diferentes:
+   - Superman
+   - Batman
+   - Mulher-Maravilha
+   - Flash
+   - Aquaman
+3. **Cálculo**: Soma os pontos de todas as respostas
+4. **Resultado**: Determina o herói com maior pontuação total
+
+### Sistema de Pontuação
+Cada questão possui 4 opções de resposta. Cada opção distribui pontos entre os 5 heróis:
+```javascript
+{
+  pergunta: "Como você resolve conflitos?",
+  opcoes: [
+    {
+      texto: "Converso e inspiro",
+      pontuacao: { superman: 10, batman: 2, mulherMaravilha: 5, flash: 6, aquaman: 2 }
+    }
+    // ... outras opções
+  ]
+}
+```
+
+## Arquivos Principais
+
+### index.html
+Página de entrada com:
+- Design temático de super-heróis
+- Botão de redirecionamento para o quiz
+- Animações CSS de entrada
+
+### pages/quiz.html
+Interface principal do quiz contendo:
+- Container para questões
+- Área de respostas com botões interativos
+- Tela de resultado com informações do herói
+- Botão para reiniciar o quiz
+
+### assets/js/quiz.js
+Lógica central do sistema:
+- Carregamento das questões
+- Gerenciamento de estado (questão atual, pontuação)
+- Processamento das respostas
+- Cálculo e exibição dos resultados
+- Controle de navegação
+
+### assets/js/questoes.js
+Banco de dados das questões:
+- 10 questões de personalidade
+- 4 opções por questão
+- Sistema de pontuação balanceado
+- Exportação para módulo ES6
+
+## Tecnologias e Recursos
+
+### Frontend
+- **HTML5**: Estrutura semântica e acessível
+- **CSS3**: 
+  - Gradientes e animações
+  - Layout responsivo (Flexbox)
+  - Tamanhos fixos para consistência visual
+- **JavaScript ES6+**:
+  - Módulos ES6 para organização
+  - Manipulação do DOM
+  - Armazenamento de estado local
 
 ### Tipografia
-- **Títulos**: `'Orbitron', monospace` - Para visual heroico
-- **Corpo**: `'Poppins', sans-serif` - Para legibilidade
+- **Google Fonts**:
+  - Orbitron: Títulos (tema futurístico/heroico)
+  - Poppins: Texto geral (legibilidade)
 
-### Componentes Reutilizáveis
-- **Botões**: Gradiente com hover e sombras
-- **Cards**: Fundo translúcido com backdrop-filter
-- **Animações**: Transições suaves (0.3s ease)
+### Responsividade
+Breakpoints definidos:
+- Desktop: > 768px
+- Tablet: 481px - 768px
+- Mobile: ≤ 480px
 
-## 📝 Tarefas Sugeridas para Colaboradores
+## Personalização
 
-### 🔥 Alta Prioridade
-- [ ] Criar página `quiz.html` com perguntas
-- [ ] Desenvolver página de resultados
-- [ ] Sistema de pontuação
+### Modificar Questões
+Edite o arquivo `assets/js/questoes.js`:
+1. Altere o texto das perguntas
+2. Modifique as opções de resposta
+3. Ajuste a pontuação conforme necessário
+4. Mantenha o formato do objeto
 
-### 🚀 Funcionalidades
-- [ ] Banco de perguntas JavaScript
-- [ ] Sistema de compartilhamento de resultados
-- [ ] Animações entre páginas
-- [ ] Modo escuro/claro
+### Alterar Cores
+Modifique `assets/css/quiz-styles.css`:
+- Gradientes de fundo
+- Cores dos botões e elementos interativos
+- Esquemas de cor personalizados
 
-### 🎨 Design
-- [ ] Mais temas visuais (Marvel, DC, Anime)
-- [ ] Responsividade avançada
-- [ ] Micro-interações
-- [ ] Loading animations
+### Adicionar Heróis
+1. Inclua novos heróis no sistema de pontuação
+2. Atualize a função `determinarHeroiVencedor()`
+3. Adicione casos no switch de `finish()`
+4. Inclua imagens correspondentes
 
-## 🛠️ Tecnologias Utilizadas
+## Compatibilidade
 
-- **HTML5**: Estrutura semântica
-- **CSS3**: Estilização moderna com flexbox, grid, gradientes
-- **JavaScript**: Interatividade e lógica do quiz
-- **Google Fonts**: Tipografia (Poppins + Orbitron)
+### Navegadores Suportados
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
 
+### Recursos Necessários
+- Suporte a CSS Grid/Flexbox
+- JavaScript ES6 Modules
+- Fetch API ou importação de módulos
 
+## Desenvolvimento
+
+### Estrutura de Arquivos
+Mantenha a organização:
+- CSS específico por página
+- JavaScript modular
+- Imagens otimizadas para web
+- Nomenclatura consistente
+
+### Boas Práticas Implementadas
+- Código comentado e documentado
+- Separação de responsabilidades
+- Design responsivo
+- Acessibilidade básica
+- Performance otimizada
